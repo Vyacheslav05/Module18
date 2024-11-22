@@ -26,11 +26,22 @@ Including another URLconf
 # ]
 
 from django.contrib import admin
-from django.urls import path
-from task2.views import func_templ, class_templ
+from django.urls import path, include
+# from task2.views import func_templ, class_templ
+#
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('func_templ/', func_templ, name='func_templ'),
+#     path('class_templ/', class_templ.as_view(), name='class_templ'),
+# ]
+
+from django.contrib import admin
+from django.urls import path, include
+from task3.views import home_view, games_view, cart_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('func_templ/', func_templ, name='func_templ'),
-    path('class_templ/', class_templ.as_view(), name='class_templ'),
+    path('', home_view, name='home'),
+    path('games/', games_view, name='games'),
+    path('cart/', cart_view, name='cart'),
 ]

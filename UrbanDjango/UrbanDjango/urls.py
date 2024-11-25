@@ -37,12 +37,21 @@ from django.urls import path, include
 
 from django.contrib import admin
 from django.urls import path, include
-from task4.views import home_view, games_view, cart_view, buy_game_view
+# from task4.views import home_view, games_view, cart_view, buy_game_view
+
+#
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('', home_view, name='home'),
+#     path('games/', games_view, name='games'),
+#     path('cart/', cart_view, name='cart'),
+#     path('buy/<str:game_name>/', buy_game_view, name='buy_game'),
+# ]
+from django.urls import path
+from task5.views import register, sign_up_by_django, sign_up_by_html
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home_view, name='home'),
-    path('games/', games_view, name='games'),
-    path('cart/', cart_view, name='cart'),
-    path('buy/<str:game_name>/', buy_game_view, name='buy_game'),
+    path('', sign_up_by_django, name='sign_up_by_django'),
+    path('register/', register, name='register'),
+    path('django_sign_up/', sign_up_by_html, name='sign_up_by_html'),
 ]

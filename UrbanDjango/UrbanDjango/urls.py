@@ -37,11 +37,12 @@ from django.urls import path, include
 
 from django.contrib import admin
 from django.urls import path, include
-from task3.views import home_view, games_view, cart_view
+from task4.views import home_view, games_view, cart_view, buy_game_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view, name='home'),
     path('games/', games_view, name='games'),
     path('cart/', cart_view, name='cart'),
+    path('buy/<str:game_name>/', buy_game_view, name='buy_game'),
 ]
